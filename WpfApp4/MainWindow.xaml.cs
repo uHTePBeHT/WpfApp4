@@ -126,8 +126,8 @@ namespace WpfApp4
                         parameterStackPanel.Children.Add(methodNameTextBlock);
 
                         // Создание текстового поля для ввода параметров
-                        var parameterTextBox = new TextBox();
-                        parameterTextBox.Tag = method.GetParameters(); // Сохраняем параметры метода в Tag для последующего использования
+                        //var parameterTextBox = new TextBox();
+                        //parameterTextBox.Tag = method.GetParameters(); // Сохраняем параметры метода в Tag для последующего использования
                         parameterStackPanel.Children.Add(parameterTextBox);
                     }
                 }

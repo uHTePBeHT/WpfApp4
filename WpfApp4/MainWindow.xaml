@@ -5,43 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="850">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- Пантера -->
-        <Button Click="MovePanther_Click" Margin="627,62,13,338">Move Panther</Button>
-        <Button Click="StandPanther_Click" Margin="627,102,13,298">Stand Panther</Button>
-        <Button Click="RoarPanther_Click" Margin="627,142,13,258">Roar Panther</Button>
-        <Button Click="ClimbTreePanther_Click" Margin="627,182,13,218">Climb Tree Panther</Button>
-        <TextBlock x:Name="pantherTextBlock" HorizontalAlignment="Left" Margin="227,140,0,0" TextWrapping="Wrap" Text="PantherTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
-        <TextBlock x:Name="pantherSpeedTextBlock" HorizontalAlignment="Left" Margin="427,122,0,0" TextWrapping="Wrap" Text="Current Panther Speed: " VerticalAlignment="Top" Height="30" />
-        <TextBlock x:Name="pantherMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="427,152,0,0" TextWrapping="Wrap" Text="Max Panther Speed: " VerticalAlignment="Top" Height="30" />
-        <CheckBox x:Name="climbedTreeCheckBox" Content="Пантера на дереве" IsEnabled="False" HorizontalAlignment="Left" Margin="427,182,0,0" VerticalAlignment="Top" Height="30" />
+        <Button Click="MovePanther_Click" Margin="627,62,13,338" Width="150" Height="20" VerticalAlignment="Top">Move Panther</Button>
+        <Button Click="StandPanther_Click" Margin="627,102,13,298" Width="150" Height="20" VerticalAlignment="Top">Stand Panther</Button>
+        <Button Click="RoarPanther_Click" Margin="627,142,13,258" Width="150" Height="20" VerticalAlignment="Top">Roar Panther</Button>
+        <Button Click="ClimbTreePanther_Click" Margin="627,182,13,218" Width="150" Height="20" VerticalAlignment="Top">Climb Tree Panther</Button>
+        <TextBlock x:Name="pantherTextBlock" HorizontalAlignment="Left" Margin="370,118,0,0" TextWrapping="Wrap" Text="PantherTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
+        <TextBlock x:Name="pantherSpeedTextBlock" HorizontalAlignment="Left" Margin="482,87,0,0" TextWrapping="Wrap" Text="Current Panther Speed: " VerticalAlignment="Top" Height="30" Width="150" />
+        <TextBlock x:Name="pantherMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="487,122,0,0" TextWrapping="Wrap" Text="Max Panther Speed: " VerticalAlignment="Top" Height="30" Width="150"/>
+        <CheckBox x:Name="climbedTreeCheckBox" Content="Пантера на дереве" IsEnabled="False" HorizontalAlignment="Left" Margin="487,152,0,0" VerticalAlignment="Top" Height="30" Width="150"/>
 
         <!-- Собака -->
-        <Button Click="MoveDog_Click" Margin="627,222,13,178">Move Dog</Button>
-        <Button Click="StandDog_Click" Margin="627,262,13,138">Stand Dog</Button>
-        <Button Click="BarkDog_Click" Margin="627,302,13,98">Bark Dog</Button>
-        <TextBlock x:Name="dogTextBlock" HorizontalAlignment="Left" Margin="227,247,0,0" TextWrapping="Wrap" Text="DogTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
-        <TextBlock x:Name="dogSpeedTextBlock" HorizontalAlignment="Left" Margin="427,242,0,0" TextWrapping="Wrap" Text="Current Dog Speed: " VerticalAlignment="Top" Height="30" />
-        <TextBlock x:Name="dogMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="427,272,0,0" TextWrapping="Wrap" Text="Max Dog Speed: " VerticalAlignment="Top" Height="30"/>
+        <Button Click="MoveDog_Click" Margin="627,222,13,178" Width="150" Height="20" VerticalAlignment="Top">Move Dog</Button>
+        <Button Click="StandDog_Click" Margin="627,262,13,138" Width="150" Height="20" VerticalAlignment="Top">Stand Dog</Button>
+        <Button Click="BarkDog_Click" Margin="627,302,13,98" Width="150" Height="20" VerticalAlignment="Top">Bark Dog</Button>
+        <TextBlock x:Name="dogTextBlock" HorizontalAlignment="Left" Margin="370,225,0,0" TextWrapping="Wrap" Text="DogTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
+        <TextBlock x:Name="dogSpeedTextBlock" HorizontalAlignment="Left" Margin="487,212,0,0" TextWrapping="Wrap" Text="Current Dog Speed: " VerticalAlignment="Top" Height="30" Width="150" />
+        <TextBlock x:Name="dogMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="487,242,0,0" TextWrapping="Wrap" Text="Max Dog Speed: " VerticalAlignment="Top" Height="30" Width="150"/>
 
         <!-- Черепаха -->
-        <Button Click="MoveTurtle_Click" Margin="627,342,13,58">Move Turtle</Button>
-        <Button Click="StandTurtle_Click" Margin="627,382,13,18">Stand Turtle</Button>
-        <TextBlock x:Name="turtleTextBlock" HorizontalAlignment="Left" Margin="227,354,0,0" TextWrapping="Wrap" Text="TurtleTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
-        <TextBlock x:Name="turtleSpeedTextBlock" HorizontalAlignment="Left" Margin="427,352,0,0" TextWrapping="Wrap" Text="Current Turtle Speed: " VerticalAlignment="Top" Height="30"/>
-        <TextBlock x:Name="turtleMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="427,382,0,0" TextWrapping="Wrap" Text="Max Turtle Speed: " VerticalAlignment="Top" Height="30"/>
+        <Button Click="MoveTurtle_Click" Margin="627,342,13,58" Width="150" Height="20" VerticalAlignment="Top">Move Turtle</Button>
+        <Button Click="StandTurtle_Click" Margin="627,382,13,18" Width="150" Height="20" VerticalAlignment="Top">Stand Turtle</Button>
+        <TextBlock x:Name="turtleTextBlock" HorizontalAlignment="Left" Margin="370,332,0,0" TextWrapping="Wrap" Text="TurtleTextBlock" VerticalAlignment="Top" Height="30" TextAlignment="Center"/>
+        <TextBlock x:Name="turtleSpeedTextBlock" HorizontalAlignment="Left" Margin="487,322,0,0" TextWrapping="Wrap" Text="Current Turtle Speed: " VerticalAlignment="Top" Height="30"/>
+        <TextBlock x:Name="turtleMaxSpeedTextBlock" HorizontalAlignment="Left" Margin="487,357,0,0" TextWrapping="Wrap" Text="Max Turtle Speed: " VerticalAlignment="Top" Height="30"/>
 
 
         <TextBox x:Name="assemblyPathTextBox" Margin="100,10,294,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="D:\Visual Studio\Apps\WpfApp4\WpfApp4\bin\Debug\WpfApp4.exe" Height="20" />
         <Button x:Name="loadAssemblyButton" Content="Load Assembly" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="LoadAssemblyButton_Click" Width="90" />
-        <ListBox x:Name="classListBox" Margin="10,51,612,338"/>
-        <StackPanel x:Name="parameterStackPanel" Margin="10,107,612,253"/>
-        <Button x:Name="executeButton" Content="Выполнить" Click="ExecuteButton_Click" HorizontalAlignment="Left" Margin="50,174,0,0" VerticalAlignment="Top" Height="35" Width="98"/>
+        <ListBox x:Name="classListBox" Margin="10,37,590,283" Width="150" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <StackPanel x:Name="parameterStackPanel" Margin="10,152,612,208" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" />
+        <Button x:Name="executeButton" Content="Выполнить" Click="ExecuteButton_Click" HorizontalAlignment="Left" Margin="186,69,0,0" VerticalAlignment="Top" Height="35" Width="98"/>
 
 
     </Grid>
