@@ -29,7 +29,7 @@ namespace WpfApp4
             MaxSpeed = maxSpeed;
         }
 
-        public abstract void Move(); // Двигаться
-        public abstract void Stand(); // Стоять
+        public abstract string Move(); // Двигаться
+        public abstract string Stand(); // Стоять
     }
 }

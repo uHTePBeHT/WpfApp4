@@ -18,23 +18,26 @@ namespace WpfApp4
         {
         }
 
-        public override void Move()
+        public override string Move()
         {
             MovementSpeed = Math.Min(MovementSpeed + 4, MaxSpeed); // Увеличиваем скорость перемещения
             Moved?.Invoke(this, $"Собака ускорилась до {MovementSpeed}.");
+            return $"Собака ускорилась до {MovementSpeed}.";
         }
 
-        public override void Stand()
+        public override string Stand()
         {
             MovementSpeed = Math.Max(MovementSpeed - 4, 0); // Уменьшаем скорость перемещения
 
             if (MovementSpeed > 0)
             {
                 Stood?.Invoke(this, $"Собака замедлилась до {MovementSpeed}.");
+                return $"Собака замедлилась до {MovementSpeed}.";
             }
             else
             {
                 Stood?.Invoke(this, "Собака остановилась.");
+                return "Собака остановилась.";
             }
         }
 

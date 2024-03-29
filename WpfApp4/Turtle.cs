@@ -17,23 +17,26 @@ namespace WpfApp4
         {
         }
 
-        public override void Move()
+        public override string Move()
         {
             MovementSpeed = Math.Min(MovementSpeed + 0.5, MaxSpeed); // Увеличиваем скорость перемещения
             Moved?.Invoke(this, $"Черепаха ускорилась до {MovementSpeed}.");
+            return $"Черепаха ускорилась до {MovementSpeed}.";
         }
 
-        public override void Stand()
+        public override string Stand()
         {
             MovementSpeed = Math.Max(MovementSpeed - 0.5, 0); // Уменьшаем скорость перемещения
 
             if (MovementSpeed > 0)
             {
                 Stood?.Invoke(this, $"Черепаха замедлилась до {MovementSpeed}.");
+                return $"Черепаха замедлилась до {MovementSpeed}.";
             }
             else
             {
                 Stood?.Invoke(this, "Черепаха остановилась.");
+                return "Черепаха остановилась.";
             }
         }
     }

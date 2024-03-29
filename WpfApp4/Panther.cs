@@ -21,41 +21,40 @@ namespace WpfApp4
         {
         }
 
-        public override void Move()
+        public override string Move() // изменение типа возвращаемого значения
         {
             _climbedTree = false; // При движении сбрасываем состояние залезания на дерево
             MovementSpeed = Math.Min(MovementSpeed + 5, MaxSpeed); // Увеличиваем скорость перемещения
-            Moved?.Invoke(this, $"Пантера ускорилась до {MovementSpeed}.");
+            return $"Пантера ускорилась до {MovementSpeed}."; // возвращаем строку с сообщением
         }
 
-        public override void Stand()
+        public override string Stand() // изменение типа возвращаемого значения
         {
             MovementSpeed = Math.Max(MovementSpeed - 5, 0); // Уменьшаем скорость перемещения
 
             if (MovementSpeed > 0)
             {
-                Stood?.Invoke(this, $"Пантера замедлилась до {MovementSpeed}.");
+                return $"Пантера замедлилась до {MovementSpeed}."; // возвращаем строку с сообщением
             }
             else
             {
-                Stood?.Invoke(this, "Пантера остановилась.");
+                return "Пантера остановилась."; // возвращаем строку с сообщением
             }
         }
 
-        public void Roar()
+        public string Roar() // изменение типа возвращаемого значения
         {
-            Roared?.Invoke(this, "Пантера рычит: Ррррррр!");
+            return "Пантера рычит: Ррррррр!"; // возвращаем строку с сообщением
         }
 
-        public void ClimbTree()
+        public string ClimbTree() // изменение типа возвращаемого значения
         {
-
             _climbedTree = true;
 
             MovementSpeed = 0;
 
-            ClimbedTree?.Invoke(this, "Пантера залезла на дерево.");
-
+            return "Пантера залезла на дерево."; // возвращаем строку с сообщением
         }
     }
+
 }

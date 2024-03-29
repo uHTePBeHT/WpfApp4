@@ -37,6 +37,7 @@ namespace WpfApp4
 
             executeButton.Click += ExecuteButton_Click;
 
+
             // Создание экземпляров животных с определенной скоростью
             panther = new Panther(15, 40);
             dog = new Dog(10, 20);
@@ -66,6 +67,7 @@ namespace WpfApp4
             turtle.Moved += (sender, message) => turtleTextBlock.Text = message;
             turtle.Stood += (sender, message) => turtleTextBlock.Text = message;
         }
+
 
         //----------------------------------------------------------------
 
@@ -102,7 +104,7 @@ namespace WpfApp4
             try
             {
                 // Очистка старых контролов с параметрами методов
-                parameterStackPanel.Children.Clear();
+                methodListBox.Items.Clear();
 
                 // Получение имени выбранного типа (класса)
                 var selectedTypeName = classListBox.SelectedItem as string;
@@ -110,25 +112,17 @@ namespace WpfApp4
                 if (selectedTypeName != null)
                 {
                     // Получение типа (класса) по его имени
-                    var selectedType = AppDomain.CurrentDomain.GetAssemblies()
-                        .SelectMany(s => s.GetTypes())
-                        .FirstOrDefault(t => t.Name == selectedTypeName);
-
-                    // Получение всех методов выбранного типа
-                    var methods = selectedType.GetMethods();
-
-                    // Добавление контролов для ввода параметров каждого метода на форму
-                    foreach (var method in methods)
+                    var selectedType = Type.GetType("WpfApp4." + selectedTypeName); // Пример указания пространства имен вашего приложения
+                    if (selectedType != null)
                     {
-                        // Создание текстового блока с именем метода
-                        var methodNameTextBlock = new TextBlock();
-                        methodNameTextBlock.Text = method.Name;
-                        parameterStackPanel.Children.Add(methodNameTextBlock);
+                        // Получение всех методов выбранного типа
+                        var methods = selectedType.GetMethods();
 
-                        // Создание текстового поля для ввода параметров
-                        //var parameterTextBox = new TextBox();
-                        //parameterTextBox.Tag = method.GetParameters(); // Сохраняем параметры метода в Tag для последующего использования
-                        //parameterStackPanel.Children.Add(parameterTextBox);
+                        // Добавление методов в список для выбора
+                        foreach (var method in methods)
+                        {
+                            methodListBox.Items.Add(method.Name);
+                        }
                     }
                 }
             }
@@ -138,34 +132,44 @@ namespace WpfApp4
             }
         }
 
+
+
         private void ExecuteButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Получаем выбранный тип (класс)
-                var selectedType = classListBox.SelectedItem as Type;
-
-                if (selectedType != null)
+                // Проверяем, был ли выбран класс
+                if (classListBox.SelectedItem == null)
                 {
+                    MessageBox.Show("Please select a class.");
+                    return;
+                }
+
+                // Проверяем, был ли выбран метод
+                if (methodListBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a method.");
+                    return;
+                }
+
+                // Получаем имя выбранного типа (класса)
+                var selectedTypeName = classListBox.SelectedItem as string;
+                if (selectedTypeName != null)
+                {
+                    // Получение типа (класса) по его имени
+                    var selectedType = Type.GetType("WpfApp4." + selectedTypeName); // Пример указания пространства имен вашего приложения
+
                     // Создаем экземпляр выбранного класса
-                    var instance = Activator.CreateInstance(selectedType);
+                    var instance = Activator.CreateInstance(selectedType, new object[] { default(double), default(double) });
+
+                    // Получаем имя выбранного метода
+                    var selectedMethodName = methodListBox.SelectedItem as string;
 
                     // Получаем информацию о выбранном методе
-                    var selectedMethod = (parameterStackPanel.Children[parameterStackPanel.Children.Count - 1] as TextBox).Tag as MethodInfo;
-
-                    // Получаем параметры для вызова метода
-                    var parameters = selectedMethod.GetParameters();
-                    object[] methodParams = new object[parameters.Length];
-
-                    // Заполняем параметры значениями, введенными пользователем
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        var parameterValue = (parameterStackPanel.Children[i * 2 + 1] as TextBox).Text;
-                        methodParams[i] = Convert.ChangeType(parameterValue, parameters[i].ParameterType);
-                    }
+                    var selectedMethod = selectedType.GetMethod(selectedMethodName);
 
                     // Вызываем выбранный метод
-                    var result = selectedMethod.Invoke(instance, methodParams);
+                    var result = selectedMethod.Invoke(instance, null);
 
                     // Отображаем результат выполнения метода
                     MessageBox.Show("Method executed successfully. Result: " + result.ToString());
@@ -176,6 +180,11 @@ namespace WpfApp4
                 MessageBox.Show("Error executing method: " + ex.Message);
             }
         }
+
+
+
+
+
 
 
 

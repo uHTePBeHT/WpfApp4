@@ -40,8 +40,8 @@
         <TextBox x:Name="assemblyPathTextBox" Margin="100,10,294,0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="D:\Visual Studio\Apps\WpfApp4\WpfApp4\bin\Debug\WpfApp4.exe" Height="20" />
         <Button x:Name="loadAssemblyButton" Content="Load Assembly" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="LoadAssemblyButton_Click" Width="90" />
         <ListBox x:Name="classListBox" Margin="10,37,590,283" Width="150" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <StackPanel x:Name="parameterStackPanel" Margin="10,152,612,208" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" />
-        <Button x:Name="executeButton" Content="Выполнить" Click="ExecuteButton_Click" HorizontalAlignment="Left" Margin="186,69,0,0" VerticalAlignment="Top" Height="35" Width="98"/>
+        <Button x:Name="executeButton" Content="Выполнить" HorizontalAlignment="Left" Margin="186,69,0,0" VerticalAlignment="Top" Height="35" Width="98"/>
+        <ListBox x:Name="methodListBox" Width="150" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,177,0,0"/>
 
 
     </Grid>
