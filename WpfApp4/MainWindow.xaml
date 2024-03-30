@@ -41,7 +41,7 @@
         <Button x:Name="loadAssemblyButton" Content="Load Assembly" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="LoadAssemblyButton_Click" Width="90" />
         <ListBox x:Name="classListBox" Margin="10,37,590,283" Width="150" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Button x:Name="executeButton" Content="Выполнить" HorizontalAlignment="Left" Margin="186,69,0,0" VerticalAlignment="Top" Height="35" Width="98"/>
-        <ListBox x:Name="methodListBox" Width="150" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,177,0,0"/>
+        <ListBox x:Name="methodListBox" Width="150" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,177,0,0"/>
 
 
     </Grid>

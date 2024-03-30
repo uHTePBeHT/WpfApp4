@@ -32,7 +32,6 @@ namespace WpfApp4
 
             loadAssemblyButton.Click += LoadAssemblyButton_Click;
 
-            // Добавляем обработчик события SelectionChanged для класса ListBox
             classListBox.SelectionChanged += ClassListBox_SelectionChanged;
 
             executeButton.Click += ExecuteButton_Click;
